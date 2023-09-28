@@ -1,0 +1,418 @@
+@charset "UTF-8";
+@import url(../bootstrap.css/bootstrap.min.css);
+* {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+* .no-scroll {
+  overflow: hidden;
+}
+
+/* animaciones */
+@keyframes show {
+  from {
+    opacity: 0;
+    scale: 25%;
+  }
+  to {
+    opacity: 1;
+    scale: 100%;
+  }
+}
+.img-ubi-1 {
+  view-timeline-name: --image;
+  view-timeline-axis: block;
+  animation-timeline: --image;
+  animation-name: show;
+  animation-range: entry 10% cover 40%;
+  animation-fill-mode: both;
+}
+
+/* Estilos generales */
+body {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  text-transform: capitalize;
+  background-color: rgb(255, 255, 255);
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0;
+  padding: 0 20px;
+}
+
+/* Estilos de la barra de navegación */
+.header {
+  background-color: rgba(9, 5, 235, 0.368627451);
+  color: #fff;
+  padding: 20px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 120px; /* Ajusta el margen inferior según tus necesidades */
+}
+.header .logo-nombre {
+  display: flex;
+  align-items: center;
+  margin-left: 20px;
+}
+.header .logo-nombre .jkl {
+  text-decoration: none;
+  color: #fff;
+  display: flex;
+  align-items: center;
+}
+.header .logo-nombre .jkl .jkl-img img {
+  max-height: 60px;
+  border-radius: 40px;
+  margin-right: 10px; /* Espacio entre el logo y el texto */
+}
+.header .barranav .menu {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  margin-right: 20px;
+}
+.header .barranav .menu .nav-item {
+  margin-right: 70px;
+}
+.header .barranav .menu .nav-item a.nav-link {
+  text-decoration: none;
+  color: #000000;
+  font-size: 18px; /* Tamaño de fuente del menú */
+  transition: color 0.3s;
+}
+.header .barranav .menu .nav-item a.nav-link:hover {
+  color: #ff5733; /* Color de resaltado en el hover */
+}
+.header .menu-2 {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+}
+.header .menu-2 .whats-cont a,
+.header .menu-2 .email-cont a {
+  text-decoration: none;
+  font-size: 24px; /* Tamaño de fuente de los íconos de WhatsApp y correo */
+  color: #000000;
+  margin-right: 20px;
+}
+.header .menu-2 .whats-cont a:hover,
+.header .menu-2 .email-cont a:hover {
+  transform: scale(1.1); /* Efecto de escala en el hover */
+}
+
+.img-coti {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 100px;
+}
+.img-coti img {
+  border-radius: 40px;
+}
+
+/* Secciones */
+.secciones-all {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* cards */
+  /* form cotizaciones */
+  /* formulario pop up */
+  /* Contenedor del formulario pop-up */
+  /* Estilos para el formulario dentro del pop-up */
+}
+.secciones-all #abrirFormulario {
+  padding: 10px 20px;
+  background-color: rgba(9, 5, 235, 0.368627451);
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  font-size: 22px;
+  cursor: pointer;
+  margin-bottom: 150px;
+}
+.secciones-all #abrirFormulario:hover {
+  background-color: rgba(2, 1, 66, 0.368627451);
+  transition: 0.8s;
+}
+.secciones-all .formulario-container {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  margin-bottom: 200px;
+  position: fixed;
+  z-index: 2;
+}
+.secciones-all .cotizacion {
+  margin-top: 75px;
+  padding: 20px;
+  background-color: rgba(55, 55, 58, 0.368627451);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 60px;
+  max-width: 400px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s;
+}
+.secciones-all .cotizacion .preguntas-cotizaciones {
+  display: none;
+}
+.secciones-all .cotizacion .container {
+  text-align: center;
+}
+.secciones-all .cotizacion .container h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+.secciones-all .cotizacion .container form {
+  width: 100%;
+  margin: 0 auto;
+}
+.secciones-all .cotizacion .container form .form-group {
+  margin-bottom: 10px;
+}
+.secciones-all .cotizacion .container form .form-group label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+.secciones-all .cotizacion .container form .form-group input[type=text],
+.secciones-all .cotizacion .container form .form-group input[type=email],
+.secciones-all .cotizacion .container form .form-group input[type=tel],
+.secciones-all .cotizacion .container form .form-group textarea {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 16px;
+}
+.secciones-all .cotizacion .container form .form-group input[type=text]:focus,
+.secciones-all .cotizacion .container form .form-group input[type=email]:focus,
+.secciones-all .cotizacion .container form .form-group input[type=tel]:focus,
+.secciones-all .cotizacion .container form .form-group textarea:focus {
+  border-color: gray; /* Cambiar el color del borde al enfocar */
+}
+.secciones-all .cotizacion .container form .form-group textarea {
+  height: 100px;
+}
+.secciones-all .cotizacion .container form .button {
+  background-color: #333;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.secciones-all .cotizacion .container form .button:hover {
+  background-color: #ff5733;
+}
+.secciones-all .cotizacion .container form .button:active {
+  background-color: #333;
+  transition: background-color 0.5s;
+}
+.secciones-all .cotizacion:active {
+  background-color: #807979;
+  transition: 1.5s;
+}
+.secciones-all .img-ubi-1 {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+  position: relative; /* Asegura que la posición sea relativa para el z-index */
+  z-index: 1; /* Asigna un valor de z-index menor a la imagen */
+}
+.secciones-all .img-ubi-1 img {
+  width: 1000px;
+  border-radius: 10px;
+}
+
+.seccion-llamanos-horarios {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 20px;
+  margin-bottom: 150px;
+}
+.seccion-llamanos-horarios .centenedor-horarios {
+  flex: 1;
+  padding: 20px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+.seccion-llamanos-horarios .centenedor-horarios .horarios {
+  text-align: center;
+}
+.seccion-llamanos-horarios .centenedor-horarios .horarios .h4-horarios {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+.seccion-llamanos-horarios .centenedor-horarios .horarios ul.ul-horarios {
+  list-style: none;
+  padding: 0;
+}
+.seccion-llamanos-horarios .centenedor-horarios .horarios ul.ul-horarios li {
+  font-size: 16px;
+  margin-bottom: 8px;
+}
+.seccion-llamanos-horarios .centenedor-llamadas {
+  flex: 1;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+.seccion-llamanos-horarios .centenedor-llamadas .llamadas {
+  text-align: center;
+}
+.seccion-llamanos-horarios .centenedor-llamadas .llamadas .h4-llamadas {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+.seccion-llamanos-horarios .centenedor-llamadas .llamadas ul.ul- {
+  list-style: none;
+  padding: 0;
+}
+.seccion-llamanos-horarios .centenedor-llamadas .llamadas ul.ul- li {
+  font-size: 16px;
+  margin-bottom: 8px;
+}
+
+/* footer */
+.footer {
+  color: #000000;
+  border-top: 1px solid #555;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 35px;
+  margin-right: 35px;
+}
+.footer ul {
+  margin-top: 15px;
+  list-style: none;
+  padding: 0;
+}
+.footer ul li {
+  display: inline-block;
+  margin-right: 20px;
+}
+.footer ul li a {
+  color: #000000;
+  font-size: 24px;
+  text-decoration: none;
+}
+.footer ul li a:hover {
+  color: #FFC107;
+}
+
+/* medias */
+@media (max-width: 1150px) {
+  .header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .header .logo-nombre {
+    margin-right: 10px;
+  }
+  .header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .header .logo-nombre {
+    margin-right: 10px;
+    margin-left: 0;
+  }
+  .header .barranav ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    margin-left: 40px;
+    min-width: none;
+  }
+  .header .menu {
+    margin-left: 0;
+    min-width: 0;
+  }
+  .header .menu .nav-item {
+    margin-left: 45px;
+  }
+  .secciones-all {
+    display: flex;
+    flex-direction: column;
+  }
+  .secciones-all .img-ubi-1 img {
+    width: 700px;
+  }
+}
+@media (max-width: 720px) {
+  .header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .header .logo-nombre {
+    margin-right: 10px;
+  }
+  .header .barranav ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    margin-left: 40px;
+    min-width: none;
+  }
+  .header .menu {
+    margin-left: 0;
+    min-width: 0;
+    margin-bottom: 15px;
+  }
+  .header .menu .nav-item {
+    padding: 10px;
+  }
+  .secciones-all {
+    display: flex;
+    flex-direction: column;
+  }
+  .secciones-all .img-ubi-1 img {
+    width: 320px;
+  }
+  .img-coti img {
+    width: 310px;
+  }
+  .footer ul {
+    margin-left: 27px;
+  }
+  .seccion-llamanos-horarios {
+    display: flex;
+    flex-direction: column;
+  }
+  .seccion-llamanos-horarios ul {
+    margin-right: 30px;
+  }
+}
+
+/*# sourceMappingURL=styles.css.map */

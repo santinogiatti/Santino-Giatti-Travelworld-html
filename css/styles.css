@@ -49,7 +49,6 @@ body {
   margin: 0;
   padding: 0;
   text-transform: capitalize;
-  background-color: rgb(255, 255, 255);
   min-height: 100vh;
 }
 
@@ -193,6 +192,36 @@ body {
   display: block;
 }
 
+/* galeria de imagenes */
+.gallery {
+  text-align: center;
+  padding: 20px;
+  max-width: 1200px; /* En lugar de width: 1200px; */
+  margin: 0 auto; /* Centrar horizontalmente */
+}
+
+.gallery-title {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.gallery-images {
+  display: flex;
+  justify-content: center;
+}
+
+.gallery-image {
+  flex: 1;
+  margin: 0 10px; /* Espacio entre las imágenes */
+}
+
+.gallery-image img {
+  max-width: 100%;
+  height: auto;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
 /* Secciones */
 .secciones-all {
   display: flex;
@@ -319,6 +348,7 @@ body {
   border-radius: 10px;
 }
 
+/* llamadas-horarios-direccion */
 .seccion-llamanos-horarios {
   width: 100%;
   display: flex;
@@ -336,9 +366,16 @@ body {
   text-align: center;
   margin-left: 10px;
 }
+.seccion-llamanos-horarios .centenedor-horarios .horarios a {
+  text-decoration: none;
+}
 .seccion-llamanos-horarios .centenedor-horarios .horarios .h4-horarios {
   font-size: 24px;
   margin-bottom: 10px;
+}
+.seccion-llamanos-horarios .centenedor-horarios .horarios .h4-horarios:hover {
+  color: #4944d4;
+  cursor: pointer;
 }
 .seccion-llamanos-horarios .centenedor-horarios .horarios ul.ul-horarios {
   list-style: none;
@@ -356,15 +393,49 @@ body {
 .seccion-llamanos-horarios .centenedor-llamadas .llamadas {
   text-align: center;
 }
+.seccion-llamanos-horarios .centenedor-llamadas .llamadas a {
+  text-decoration: none;
+}
 .seccion-llamanos-horarios .centenedor-llamadas .llamadas .h4-llamadas {
   font-size: 24px;
   margin-bottom: 10px;
+}
+.seccion-llamanos-horarios .centenedor-llamadas .llamadas .h4-llamadas:hover {
+  color: #4944d4;
+  cursor: pointer;
 }
 .seccion-llamanos-horarios .centenedor-llamadas .llamadas ul.ul- {
   list-style: none;
   padding: 0;
 }
 .seccion-llamanos-horarios .centenedor-llamadas .llamadas ul.ul- li {
+  font-size: 16px;
+  margin-bottom: 8px;
+}
+.seccion-llamanos-horarios .contenedor-direccion {
+  flex: 1;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+.seccion-llamanos-horarios .contenedor-direccion .direccion {
+  text-align: center;
+}
+.seccion-llamanos-horarios .contenedor-direccion .direccion a {
+  text-decoration: none;
+}
+.seccion-llamanos-horarios .contenedor-direccion .direccion .h4-direccion {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+.seccion-llamanos-horarios .contenedor-direccion .direccion .h4-direccion:hover {
+  color: #4944d4;
+  cursor: pointer;
+}
+.seccion-llamanos-horarios .contenedor-direccion .direccion ul.ul- {
+  list-style: none;
+  padding: 0;
+}
+.seccion-llamanos-horarios .contenedor-direccion .direccion ul.ul- li {
   font-size: 16px;
   margin-bottom: 8px;
 }
@@ -428,6 +499,10 @@ body {
   .header .menu .nav-item {
     margin-left: 20px;
     padding: 20px;
+  }
+  .gallery-images {
+    display: flex;
+    flex-direction: column;
   }
   .secciones-all {
     display: flex;

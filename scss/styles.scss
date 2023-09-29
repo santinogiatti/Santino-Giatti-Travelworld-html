@@ -25,6 +25,21 @@
   }
 }
 
+@keyframes fadeInAnimation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.fadeIn {
+  animation: fadeInAnimation 0.8s ease-in-out;
+}
+
+
+
 .img-ubi-1{
 
   view-timeline-name: --image ;
@@ -42,7 +57,7 @@
 
 
 body {
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular',  'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
     text-transform: capitalize;
@@ -61,7 +76,7 @@ body {
 
 
   .header {
-    background-color: #0905eb5e;
+    background-color: #4944d4;
     color: #fff;
     padding: 20px 0;
     display: flex;
@@ -91,12 +106,12 @@ body {
     }
   
     .barranav {
+      
       .menu {
         list-style: none;
         padding: 0;
         display: flex;
-        margin-right: 20px;
-  
+
         .nav-item {
           margin-right: 70px;
   
@@ -107,7 +122,7 @@ body {
             transition: color 0.3s;
   
             &:hover {
-              color: #ff5733; /* Color de resaltado en el hover */
+              color: #979292; /* Color de resaltado en el hover */
             }
           }
         }
@@ -120,16 +135,36 @@ body {
       align-items: center;
       margin-right: 20px;
   
-      .whats-cont,
+      .whats-cont{
+        a {
+          text-decoration: none;
+          font-size: 24px; /* Tamaño de fuente de los íconos de WhatsApp y correo */
+          color: #47cc42;
+          margin-right: 20px;
+          font-size: 39px;
+  
+          &:hover {
+            transform: scale(1.1); /* Efecto de escala en el hover */
+          }
+          &:active{
+            color: #fff;
+          }
+        }
+      }
+
       .email-cont {
         a {
           text-decoration: none;
           font-size: 24px; /* Tamaño de fuente de los íconos de WhatsApp y correo */
           color: #000000;
           margin-right: 20px;
+          font-size: 39px;
   
           &:hover {
             transform: scale(1.1); /* Efecto de escala en el hover */
+          }
+          &:active{
+            color: #fff;
           }
         }
       }
@@ -149,24 +184,66 @@ body {
     border-radius: 40px;
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
  
+
+/* acordeon */
+
+.acordeon {
+  max-width: 600px;
+  margin: 0 auto;
+  margin-bottom: 75px;
+
+  h1{
+    text-align: center;
+    margin-bottom: 50px;
+  }
+
+  .acordeon-titulo {
+      background-color: #f4f4f4;
+      padding: 10px;
+      display: block;
+      cursor: pointer;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      margin-bottom: 5px;
+      font-weight: bold;
+
+  &:hover{
+     color: #ff5733; 
+     transform: scale(1.03);    
+  }
+  }
+  
+  .acordeon-content {
+      display: none;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      margin-bottom: 5px;
+      max-height: 0; 
+      overflow: hidden; 
+  
+      transition: max-height 0.3s ease-in-out;
+
+      ul{
+
+        li{
+          margin-bottom: 10px;
+        }
+
+      }
+  }
+  
+  input[type="checkbox"] {
+      display: none;
+  }
+  
+  input[type="checkbox"]:checked + .acordeon-titulo + .acordeon-content {
+      display: block;
+  }
+
+}
+
 /* Secciones */
 
 
@@ -176,10 +253,6 @@ body {
   align-items: center;
   justify-content: center;
 
-  /* cards */
-
-
-
 /* form cotizaciones */
    
     /* formulario pop up */
@@ -187,16 +260,16 @@ body {
   #abrirFormulario {
     padding: 10px 20px;
     background-color: #0905eb5e;
-    color: #fff;
     border: none;
     border-radius: 3px;
-    font-size: 22px;
+    font-size: 25px;
     cursor: pointer;
-    margin-bottom: 150px;
+    margin-bottom: 80px;
 
     &:hover{
-      background-color: #0201425e;
-      transition: 0.8s;
+      background-color: rgb(2, 1, 66);
+      transition: 0.5s;
+      color: #fff;
     }
 }
 
@@ -213,7 +286,7 @@ body {
     background-color: #fff; 
     margin-bottom: 200px;
     position: fixed; 
-  z-index: 2; 
+    z-index: 2; 
 }
 
 /* Estilos para el formulario dentro del pop-up */
@@ -334,6 +407,7 @@ body {
 
     .horarios {
       text-align: center;
+      margin-left: 10px;
 
       .h4-horarios {
         font-size: 24px;
@@ -397,10 +471,14 @@ body {
         margin-top: 15px;
         list-style: none;
         padding: 0;
+        
 
+       
         li {
           display: inline-block;
-          margin-right: 20px;
+          margin: 20px;
+          
+
 
           a {
             color: #000000;
@@ -418,6 +496,20 @@ body {
 }
      
   /* medias */
+
+  @media (min-width: 1150px){
+    .header{
+
+      .barranav ul{
+
+        margin-left: 160px;
+
+      }
+
+    }
+  }
+
+
   @media (max-width: 1150px){
 
     .header{
@@ -426,19 +518,7 @@ body {
       justify-content: center;
       
       .logo-nombre{  
-        margin-right: 10px;     
-      }
-      
-    }
-
-    .header{
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      
-      .logo-nombre{  
-        margin-right: 10px;   
-        margin-left: 0;   
+        margin-right: 20px;     
       }
 
       .barranav ul{
@@ -451,11 +531,13 @@ body {
         min-width: none;
       }
       .menu{
-        margin-left: 0;
+        margin-left: none;
         min-width: 0;
+        
 
         .nav-item{
-          margin-left: 45px;
+          margin-left: 20px;
+          padding: 20px;
         }
       }
     }
@@ -478,11 +560,6 @@ body {
       display: flex;
       flex-direction: column;
       justify-content: center;
-      
-      
-      .logo-nombre{  
-        margin-right: 10px;     
-      }
 
       .barranav ul{
         display: flex;
@@ -498,7 +575,7 @@ body {
         min-width: 0;
         margin-bottom: 15px;
         .nav-item{
-          padding: 10px;
+          padding: 20px;
         }
       }
     }
@@ -521,9 +598,6 @@ body {
     } 
 
     .footer{
-      ul{
-        margin-left: 27px;
-      }
     }
 
     .seccion-llamanos-horarios{
@@ -534,10 +608,9 @@ body {
         margin-right: 30px;
       }
     }
-
   }
      
-
+  
   
   
   

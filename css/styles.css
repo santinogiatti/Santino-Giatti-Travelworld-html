@@ -22,6 +22,18 @@
     scale: 100%;
   }
 }
+@keyframes fadeInAnimation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.fadeIn {
+  animation: fadeInAnimation 0.8s ease-in-out;
+}
+
 .img-ubi-1 {
   view-timeline-name: --image;
   view-timeline-axis: block;
@@ -49,7 +61,7 @@ body {
 
 /* Estilos de la barra de navegación */
 .header {
-  background-color: rgba(9, 5, 235, 0.368627451);
+  background-color: #4944d4;
   color: #fff;
   padding: 20px 0;
   display: flex;
@@ -77,7 +89,6 @@ body {
   list-style: none;
   padding: 0;
   display: flex;
-  margin-right: 20px;
 }
 .header .barranav .menu .nav-item {
   margin-right: 70px;
@@ -89,7 +100,7 @@ body {
   transition: color 0.3s;
 }
 .header .barranav .menu .nav-item a.nav-link:hover {
-  color: #ff5733; /* Color de resaltado en el hover */
+  color: #979292; /* Color de resaltado en el hover */
 }
 .header .menu-2 {
   list-style: none;
@@ -97,16 +108,31 @@ body {
   align-items: center;
   margin-right: 20px;
 }
-.header .menu-2 .whats-cont a,
+.header .menu-2 .whats-cont a {
+  text-decoration: none;
+  font-size: 24px; /* Tamaño de fuente de los íconos de WhatsApp y correo */
+  color: #47cc42;
+  margin-right: 20px;
+  font-size: 39px;
+}
+.header .menu-2 .whats-cont a:hover {
+  transform: scale(1.1); /* Efecto de escala en el hover */
+}
+.header .menu-2 .whats-cont a:active {
+  color: #fff;
+}
 .header .menu-2 .email-cont a {
   text-decoration: none;
   font-size: 24px; /* Tamaño de fuente de los íconos de WhatsApp y correo */
   color: #000000;
   margin-right: 20px;
+  font-size: 39px;
 }
-.header .menu-2 .whats-cont a:hover,
 .header .menu-2 .email-cont a:hover {
   transform: scale(1.1); /* Efecto de escala en el hover */
+}
+.header .menu-2 .email-cont a:active {
+  color: #fff;
 }
 
 .img-coti {
@@ -120,13 +146,56 @@ body {
   border-radius: 40px;
 }
 
+/* acordeon */
+.acordeon {
+  max-width: 600px;
+  margin: 0 auto;
+  margin-bottom: 75px;
+}
+.acordeon h1 {
+  text-align: center;
+  margin-bottom: 50px;
+}
+.acordeon .acordeon-titulo {
+  background-color: #f4f4f4;
+  padding: 10px;
+  display: block;
+  cursor: pointer;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+.acordeon .acordeon-titulo:hover {
+  color: #ff5733;
+  transform: scale(1.03);
+}
+.acordeon .acordeon-content {
+  display: none;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-bottom: 5px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-in-out;
+}
+.acordeon .acordeon-content ul li {
+  margin-bottom: 10px;
+}
+.acordeon input[type=checkbox] {
+  display: none;
+}
+.acordeon input[type=checkbox]:checked + .acordeon-titulo + .acordeon-content {
+  display: block;
+}
+
 /* Secciones */
 .secciones-all {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  /* cards */
   /* form cotizaciones */
   /* formulario pop up */
   /* Contenedor del formulario pop-up */
@@ -135,16 +204,16 @@ body {
 .secciones-all #abrirFormulario {
   padding: 10px 20px;
   background-color: rgba(9, 5, 235, 0.368627451);
-  color: #fff;
   border: none;
   border-radius: 3px;
-  font-size: 22px;
+  font-size: 25px;
   cursor: pointer;
-  margin-bottom: 150px;
+  margin-bottom: 80px;
 }
 .secciones-all #abrirFormulario:hover {
-  background-color: rgba(2, 1, 66, 0.368627451);
-  transition: 0.8s;
+  background-color: rgb(2, 1, 66);
+  transition: 0.5s;
+  color: #fff;
 }
 .secciones-all .formulario-container {
   display: none;
@@ -262,6 +331,7 @@ body {
 }
 .seccion-llamanos-horarios .centenedor-horarios .horarios {
   text-align: center;
+  margin-left: 10px;
 }
 .seccion-llamanos-horarios .centenedor-horarios .horarios .h4-horarios {
   font-size: 24px;
@@ -313,7 +383,7 @@ body {
 }
 .footer ul li {
   display: inline-block;
-  margin-right: 20px;
+  margin: 20px;
 }
 .footer ul li a {
   color: #000000;
@@ -325,6 +395,11 @@ body {
 }
 
 /* medias */
+@media (min-width: 1150px) {
+  .header .barranav ul {
+    margin-left: 160px;
+  }
+}
 @media (max-width: 1150px) {
   .header {
     display: flex;
@@ -332,16 +407,7 @@ body {
     justify-content: center;
   }
   .header .logo-nombre {
-    margin-right: 10px;
-  }
-  .header {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-  .header .logo-nombre {
-    margin-right: 10px;
-    margin-left: 0;
+    margin-right: 20px;
   }
   .header .barranav ul {
     display: flex;
@@ -353,11 +419,12 @@ body {
     min-width: none;
   }
   .header .menu {
-    margin-left: 0;
+    margin-left: none;
     min-width: 0;
   }
   .header .menu .nav-item {
-    margin-left: 45px;
+    margin-left: 20px;
+    padding: 20px;
   }
   .secciones-all {
     display: flex;
@@ -373,9 +440,6 @@ body {
     flex-direction: column;
     justify-content: center;
   }
-  .header .logo-nombre {
-    margin-right: 10px;
-  }
   .header .barranav ul {
     display: flex;
     flex-direction: column;
@@ -391,7 +455,7 @@ body {
     margin-bottom: 15px;
   }
   .header .menu .nav-item {
-    padding: 10px;
+    padding: 20px;
   }
   .secciones-all {
     display: flex;
@@ -402,9 +466,6 @@ body {
   }
   .img-coti img {
     width: 310px;
-  }
-  .footer ul {
-    margin-left: 27px;
   }
   .seccion-llamanos-horarios {
     display: flex;

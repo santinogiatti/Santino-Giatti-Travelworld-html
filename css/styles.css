@@ -227,9 +227,8 @@ p {
 .gallery {
   text-align: center;
   padding: 90px;
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 0 auto;
-  margin-bottom: 70px;
 }
 
 .gallery-title {
@@ -294,10 +293,22 @@ p {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: #fff;
+  background-color: rgb(122, 112, 112);
   margin-bottom: 200px;
   position: fixed;
   z-index: 2;
+}
+.secciones-all .formulario-container a {
+  text-decoration: none;
+  font-size: 24px;
+  color: #000000;
+  font-size: 39px;
+}
+.secciones-all .formulario-container a:hover {
+  transform: scale(1.1);
+}
+.secciones-all .formulario-container a:active {
+  color: #fff;
 }
 .secciones-all .cotizacion {
   margin-top: 75px;

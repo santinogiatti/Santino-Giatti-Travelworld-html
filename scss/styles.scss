@@ -208,8 +208,6 @@ body {
   padding-bottom: 35px;
   text-align: justify;
   border-bottom: 1.5px solid #000000;
-  
-  
   background-size: 100%;
 }
 
@@ -295,9 +293,9 @@ p {
 .gallery {
   text-align: center;
   padding: 90px;
-  max-width: 1200px; 
+  max-width: 1400px; 
   margin: 0 auto; 
-  margin-bottom: 70px; 
+  
 }
 
 .gallery-title {
@@ -313,6 +311,7 @@ p {
 .gallery-image {
   flex: 1;
   margin: 0 10px; 
+  
 
   &:hover{
     transform: scale(0.99);
@@ -372,10 +371,24 @@ p {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: #fff; 
+    background-color: rgb(122, 112, 112);   
     margin-bottom: 200px;
     position: fixed; 
     z-index: 2; 
+
+    a{
+      text-decoration: none;
+      font-size: 24px;
+      color: #000000;
+      font-size: 39px;
+
+      &:hover {
+        transform: scale(1.1);
+      }
+      &:active{
+        color: #fff;
+      }
+    }
 }
 
 /* Estilos para el formulario dentro del pop-up */

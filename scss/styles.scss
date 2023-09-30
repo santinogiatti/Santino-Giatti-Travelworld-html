@@ -12,6 +12,20 @@
 }
 
 /* animaciones */
+
+@keyframes glowing{
+  0%{
+    background-position: 0 0; 
+  }
+  50%{
+    background-position: 400% 0;
+  }
+
+  100%{
+    background-position: 0 0; 
+  }
+
+}
  
 @keyframes show{
   from{
@@ -83,6 +97,7 @@ body {
     justify-content: space-between;
     align-items: center;
     margin-bottom: 120px; 
+    
   
     .logo-nombre {
       display: flex;
@@ -178,12 +193,32 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-bottom: 100px;
+  margin-bottom: 50px;
 
 
   img{
     border-radius: 40px;
   }
+}
+/* descripcion */
+
+.company-description {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 10px;
+  border-radius: 20px;
+  text-align: justify;
+  
+  background-size: 100%;
+}
+
+p {
+  font-size: 16px;
+  color: #3f3e3e;
+  line-height: 1.5;
+  margin-bottom: 20px;
+  text-align: center;
+  
 }
  
 
@@ -193,6 +228,8 @@ body {
   max-width: 600px;
   margin: 0 auto;
   margin-bottom: 75px;
+  display: flex;
+  flex-direction: column;
 
   h1{
     text-align: center;
@@ -215,7 +252,7 @@ body {
 
   &:hover{
      color: #1a16f1ad; 
-     transform: scale(1.03);    
+     transform: scale(1.010);    
   }
   }
   
@@ -256,10 +293,10 @@ body {
 
 .gallery {
   text-align: center;
-  padding: 20px;
-  max-width: 1200px; /* En lugar de width: 1200px; */
-  margin: 0 auto; /* Centrar horizontalmente */
-  
+  padding: 90px;
+  max-width: 1200px; 
+  margin: 0 auto; 
+  margin-bottom: 70px; 
 }
 
 .gallery-title {
@@ -270,19 +307,24 @@ body {
 .gallery-images {
   display: flex;
   justify-content: center;
-  
 }
 
 .gallery-image {
   flex: 1;
-  margin: 0 10px; /* Espacio entre las imágenes */
+  margin: 0 10px; 
+
+  &:hover{
+    transform: scale(0.99);
+    transition: 0.5s;
+    cursor: pointer;
+  }
 }
 
 .gallery-image img {
   max-width: 100%;
   height: auto;
   border: 1px solid #ccc;
-  border-radius: 5px;
+  border-radius: 5px; 
 }
 
 
@@ -303,7 +345,8 @@ body {
 
   #abrirFormulario {
     padding: 10px 20px;
-    background-color: #0905eb5e;
+    background-color: rgb(2, 1, 66);
+    color: white;
     border: none;
     border-radius: 3px;
     font-size: 25px;
@@ -311,10 +354,11 @@ body {
     margin-bottom: 80px;
 
     &:hover{
-      background-color: rgb(2, 1, 66);
+      background-color: rgb(0, 0, 0);
+      transform: scale(0.98);
       transition: 0.5s;
-      color: #fff;
     }
+
 }
 
 /* Contenedor del formulario pop-up */
@@ -643,6 +687,7 @@ body {
     .gallery-images {
       display: flex;
       flex-direction: column;
+      justify-content: center;
     }
 
     .secciones-all{
@@ -713,10 +758,3 @@ body {
     }
   }
      
-     
-  
-  
-  
-  
-  
-  

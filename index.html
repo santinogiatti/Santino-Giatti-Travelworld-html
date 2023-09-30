@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="./bootstrap.css/bootstrap.min.css">
 <link rel="stylesheet" href="./css/styles.css">
-<script src="./javascript/script.js"></script>
+<script src="script.js"></script>
 <style></style>
 </head>
 <body>
@@ -55,14 +55,18 @@
       </li> 
     </ul>
 </header>
-
-
-
-
-<div id="cotizacion" class="img-coti">
+<!-- img logo completo -->
+<div class="img-coti">
   <img src="./imagenes/logo-JKL-2.jpg"></img>
 </div>
 
+<!-- description -->
+
+<div class="company-description">
+  <p>
+    Somos una empresa con una sólida trayectoria, fundada en el año 2003, que se enorgullece de ofrecer productos y servicios de la más alta calidad. A lo largo de los años, hemos ganado una excelente reputación entre nuestros clientes, gracias a nuestro compromiso con la excelencia y la satisfacción del cliente. Colaboramos estrechamente con algunas de las marcas más reconocidas y respetadas en la industria, incluyendo INA, Rollway, SRN, FAG, NTN, TIMKEN, NSK:RHP y SKF. Esta asociación nos permite ofrecer productos de alta calidad respaldados por la experiencia y la innovación de estas marcas líderes.
+  </p>
+</div>
 
 <!-- galeria de fotos -->
 
@@ -74,7 +78,7 @@
       <div class="gallery-image">
           <img src="./imagenes/jkl-fachada.jpg" alt="Imagen 2">
       </div>
-      <div class="gallery-image">
+      <div id="cotizacion" class="gallery-image">
           <img src="./imagenes/productos-2.jpg" alt="Imagen 3">
       </div>
   </div>
@@ -82,56 +86,58 @@
 
 <!-- acordeon -->
 
-
-<div class="acordeon">
-  <div class="acordeon-1">
-
-    <input type="checkbox" id="section1">
-    <label for="section1" class="acordeon-titulo " style="text-align: center;">Catálogo de Productos</label>
+  <div  class="acordeon">
+    <div class="acordeon-1">
+  
+      <input type="checkbox" id="section1">
+      <label for="section1" class="acordeon-titulo " style="text-align: center;">Catálogo de Productos</label>
+      <div class="acordeon-content">
+        <ul>
+          <h3 style="margin-right: 80px; margin-bottom: 20px; border-bottom: 1px solid #555;">Componentes Automotrices, vial-agromineria e industria</h3>
+          <li>Rodamientos de automotor, Vial-Agromineria E Industria</li>
+          <li>Kits de distribución</li>
+          <li>Bomba de agua</li>
+          <li>Kits de embragues</li>
+          <li>Correas Poly V</li>
+          <li>Tensores de correa</li>
+          <li>Crapodinas de embrague</li>
+          <li>Homocinéticas</li>
+          <li>Crucetas y tricetas</li>
+          <li>Conjunto de descarbonización</li>
+          <li>Juntas de tapa de motor y Supermedidas</li>
+          <li>Retenes</li>
+          <li>Grasas</li>
+          <li>Refrigerantes</li>
+          <li>Agua destilada</li>
+          <li>Aceite Hidráulico</li>
+          <li>Aceite de caja</li>
+          <li>Líquido de frenos</li>
+          <li>Tornillos de motor</li>
+          <li>Termostato y Portatermostato</li>
+          <li>Anaeróbicos</li>
+          <li>Limpiamanos</li>
+        </ul>
+      </div>
+    </div>
+    
+    <input type="checkbox" id="section2">
+    <label for="section2" class="acordeon-titulo" style="text-align: center;""  ">Formas de pago</label>
     <div class="acordeon-content">
       <ul>
-        <h3 style="margin-right: 80px; margin-bottom: 20px; border-bottom: 1px solid #555;">Componentes Automotrices, vial-agromineria e industria</h3>
-        <li>Rodamientos de automotor, Vial-Agromineria E Industria</li>
-        <li>Kits de distribución</li>
-        <li>Bomba de agua</li>
-        <li>Kits de embragues</li>
-        <li>Correas Poly V</li>
-        <li>Tensores de correa</li>
-        <li>Crapodinas de embrague</li>
-        <li>Homocinéticas</li>
-        <li>Crucetas y tricetas</li>
-        <li>Conjunto de descarbonización</li>
-        <li>Juntas de tapa de motor y Supermedidas</li>
-        <li>Retenes</li>
-        <li>Grasas</li>
-        <li>Refrigerantes</li>
-        <li>Agua destilada</li>
-        <li>Aceite Hidráulico</li>
-        <li>Aceite de caja</li>
-        <li>Líquido de frenos</li>
-        <li>Tornillos de motor</li>
-        <li>Termostato y Portatermostato</li>
-        <li>Anaeróbicos</li>
-        <li>Limpiamanos</li>
+        <div style="text-align: center;">
+          <h3 style="margin-right: 32px; margin-bottom: 10px;">métodos</h3>
+        </div>
+        <li>Efectivo</li>
+        <li>Transferencia/depósito bancario</li>
+        <li>Mercado Pago</li>
+        <li>Tarjeta de débito</li>
+        <li>Tarjeta de crédito</li>
       </ul>
     </div>
   </div>
-  
-  <input type="checkbox" id="section2">
-  <label for="section2" class="acordeon-titulo" style="text-align: center;""  ">Formas de pago</label>
-  <div class="acordeon-content">
-    <ul>
-      <div style="text-align: center;">
-        <h3 style="margin-right: 32px; margin-bottom: 10px;">métodos</h3>
-      </div>
-      <li>Efectivo</li>
-      <li>Transferencia/depósito bancario</li>
-      <li>Mercado Pago</li>
-      <li>Tarjeta de débito</li>
-      <li>Tarjeta de crédito</li>
-    </ul>
-  </div>
-</div>
+
+
+
 
 <!-- secciones -->
 
@@ -170,6 +176,8 @@
     </section >
 </div>
 
+
+<!-- carrousel -->
 
 
 <!--ubicacion -->
@@ -262,7 +270,7 @@
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-<script src="./javascript/script.js"></script>  
+  <script src="script.js"></script> 
 <script src="./bootstrap-js/bootstrap.min.js"></script>  
 </body>
 </html>
